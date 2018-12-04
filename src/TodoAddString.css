@@ -28,4 +28,14 @@
 
 ul.ToDoList {
     padding: 0;
-  }
+}
+
+label > span {
+    margin-right: .5rem;
+}
+
+.items {
+    display: flex;
+    flex-flow: column;
+    align-items: flex-end;
+}

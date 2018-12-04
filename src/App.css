@@ -8,10 +8,3 @@ body {
   background-color: aqua;
   font-family: sans-serif;
 }
-
-.App .ListHeader {
-  text-shadow: 2px;
-  font-family: sans-serif;
-  font-size: 16px;
-  padding: 5px;
-}

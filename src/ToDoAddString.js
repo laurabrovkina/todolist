@@ -2,24 +2,25 @@ import React from "react";
 import TodoItems from "./TodoItems.js"
 import "./TodoAddString.css"
 
-
 class ToDoAddString extends React.PureComponent {
     constructor(props) {
         super(props);
 
         this.state = {
-            items: [] 
+            value: '',
+            items: []
         };
 
         this.addItem = this.addItem.bind(this);
         this.deleteItem = this.deleteItem.bind(this);
     }
- 
+
 
     addItem(e) {
-        if (this._inputElement.value !== ""){
+        const { value } = this.state;
+        if (value !== "") {
             var newItem = {
-                text: this._inputElement.value,
+                text: value,
                 key: Date.now()
             };
 
@@ -30,7 +31,7 @@ class ToDoAddString extends React.PureComponent {
             });
         }
 
-        this._inputElement.value = "";
+        this.setState({ value: '' });
 
         console.log(this.state.items);
 
@@ -38,9 +39,7 @@ class ToDoAddString extends React.PureComponent {
     }
 
     deleteItem(key) {
-        var filteredItems = this.state.items.filter(function(item){
-            return (item.key !== key)
-        });
+        var filteredItems = this.state.items.filter(item => item.key !== key);
 
         this.setState({
             items: filteredItems
@@ -48,22 +47,30 @@ class ToDoAddString extends React.PureComponent {
     }
 
     render() {
+
         return (
             <div className="ItemsList">
-              <input ref={(a) => this._inputElement = a} value={this.state.value} onKeyPress={this._handleKeyPress} />
-            <div>
-                <TodoItems entries={this.state.items}
-                            delete={this.deleteItem}/>
-            </div>
+                <label>
+                    <span>TODO list</span>
+                    <input value={this.state.value} onChange={this._handleChange} onKeyPress={this._handleKeyPress} />
+                </label>
+                <div className='items'>
+                    <TodoItems entries={this.state.items} delete={this.deleteItem} />
+                </div>
             </div>
         );
-      }
+    }
 
-      _handleKeyPress = (e) => {
+
+    _handleKeyPress = (e) => {
         if (e.key === 'Enter') {
-            {this.addItem(e)}
+            { this.addItem(e) }
         }
-      }
+    }
+
+    _handleChange = e => {
+        this.setState({ value: e.currentTarget.value });
+    }
 
 }
 export default ToDoAddString;
