@@ -1,5 +1,6 @@
 import React from "react";
 import "./TodoAddString.css"
+import FlipMove from "react-flip-move"
 
 class TodoItems extends React.PureComponent {
 constructor(props) {
@@ -23,7 +24,9 @@ constructor(props) {
 
         return (
             <ul className="ToDoList">
-                {listItems}
+                <FlipMove duration={250} easing="ease-out">
+                {listItems}            
+                </FlipMove>
             </ul>
         );
     }
