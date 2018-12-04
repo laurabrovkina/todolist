@@ -5,6 +5,7 @@ import ToDoAddString from "./ToDoAddString.js";
 class App extends React.PureComponent {
   render() {
     return (
+      <body>
       <div className="App">
           <header className="ListHeader">
             TODO List
@@ -13,6 +14,7 @@ class App extends React.PureComponent {
         <ToDoAddString />
       </div>    
       </div>
+    </body>
     );
   }
 }
