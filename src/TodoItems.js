@@ -1,8 +1,10 @@
 import React from "react";
+import "./TodoAddString.css"
 
 class TodoItems extends React.PureComponent {
     createItem(item) {
-        return <li key={item.key}>{item.text}</li>
+        return <li onClick={() => this.delete(item.key)}      
+                    key={item.key}>{item.text}</li>
     }
 
     render() {

@@ -8,7 +8,7 @@ class App extends React.PureComponent {
       <body>
       <div className="App">
           <header className="ListHeader">
-            TODO List
+            TODO List 
           </header>
       <div className="InputContainer">
         <ToDoAddString />

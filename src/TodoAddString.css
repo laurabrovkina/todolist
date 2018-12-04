@@ -1,0 +1,26 @@
+.ItemsList input {
+    padding: 10px;
+    font-size: 16px;
+    width: 225px;
+    border-radius: 5px;
+}
+
+.ItemsList .ToDoList {
+    list-style: none;
+    padding-left: 0;
+    width: 250px;
+  } 
+
+
+.ItemsList .ToDoList li {
+    color: #333;
+    background-color: rgba(255,255,255,.5);
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    list-style: none;
+}
+
+ul.ToDoList {
+    padding: 0;
+  }

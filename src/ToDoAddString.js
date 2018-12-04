@@ -1,5 +1,7 @@
 import React from "react";
 import TodoItems from "./TodoItems.js"
+import "./TodoAddString.css"
+
 
 class ToDoAddString extends React.PureComponent {
     constructor(props) {
@@ -36,7 +38,7 @@ class ToDoAddString extends React.PureComponent {
 
     render() {
         return (
-            <div>
+            <div className="ItemsList">
               <input ref={(a) => this._inputElement = a} value={this.state.value} onKeyPress={this._handleKeyPress} />
             <div>
                 <TodoItems entries={this.state.items}/>
